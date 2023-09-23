@@ -1,0 +1,23 @@
+package br.connectementor.entidades;
+
+public class Usuario {
+    private int Id;
+    private String Nome;
+    private String Email;
+    private String Senha;
+    private String Telefone;
+    private int Programacao;
+    private int Reedes;
+    private int Ciberseguranca;
+    private int Banco_Dados;
+    private int businessIntelligence;
+    private int GestaoTI;
+    private int Cloud_Computing;
+    private int DevOps;
+
+    public Usuario() {
+        // Construtor vazio
+    }
+}
+
+   

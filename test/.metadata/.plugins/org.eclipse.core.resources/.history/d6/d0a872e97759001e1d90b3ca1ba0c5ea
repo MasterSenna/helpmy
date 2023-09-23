@@ -1,0 +1,16 @@
+package br.mercado.dao;
+
+import br.mercado.models.Produto;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ProdutoDAO {
+    private Connection conexao;
+
+    public ProdutoDAO(Connection conexao) {
+        this.conexao = conexao;
+    }
+
+    // Métodos para CRUD (create, read, update, delete)
+}

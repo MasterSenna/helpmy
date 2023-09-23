@@ -1,0 +1,53 @@
+package br.connectementor.entidades;
+
+public class Usuario {
+    private int id;
+    private String nome;
+    private String email;
+    // Outros campos aqui
+
+    // Construtor vazio
+    public Usuario() {
+    }
+
+    // Construtor com todos os campos, exceto o ID, que normalmente é gerado pelo banco de dados
+    public Usuario(String nome, String email /* Outros campos aqui */) {
+        this.nome = nome;
+        this.email = email;
+        // Inicialize outros campos aqui
+    }
+
+    // Getters e Setters para todos os campos
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    // Outros getters e setters para os outros campos
+
+    @Override
+    public String toString() {
+        return "Usuario [id=" + id + ", nome=" + nome + ", email=" + email + /* Outros campos aqui */ + "]";
+    }
+    
+    // Outros métodos específicos da classe, se necessário
+}

@@ -1,0 +1,187 @@
+package br.connectementor.entidades;
+
+public class Usuario {
+    private int Id;
+    private String Nome;
+    private String Email;
+    private String Senha;
+    private String Telefone;
+    private int Programacao;
+    private int Reedes;
+    private int Ciberseguranca;
+    private int Banco_Dados;
+    private int businessIntelligence;
+    private int GestaoTI;
+    private int Cloud_Computing;
+    private int DevOps;
+
+    public Usuario() {
+        // Construtor vazio
+    }
+
+    public Usuario(String nome, String email, String senha, String telefone, int programacao, int redes,
+            int ciberseguranca, int bancoDados, int businessIntelligence, int gestaoTI, int cloudComputing,
+            int devOps) {
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.telefone = telefone;
+        this.programacao = programacao;
+        this.redes = redes;
+        this.ciberseguranca = ciberseguranca;
+        this.bancoDados = bancoDados;
+        this.businessIntelligence = businessIntelligence;
+        this.gestaoTI = gestaoTI;
+        this.cloudComputing = cloudComputing;
+        this.devOps = devOps;
+    }
+
+    // Getters e Setters
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    // Outros getters e setters
+
+    // Implemente os demais getters e setters para os campos restantes
+
+    public Usuario(int id, String nome, String email, String senha, String telefone, int programacao, int redes,
+			int ciberseguranca, int bancoDados, int businessIntelligence, int gestaoTI, int cloudComputing,
+			int devOps) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.email = email;
+		this.senha = senha;
+		this.telefone = telefone;
+		this.programacao = programacao;
+		this.redes = redes;
+		this.ciberseguranca = ciberseguranca;
+		this.bancoDados = bancoDados;
+		this.businessIntelligence = businessIntelligence;
+		this.gestaoTI = gestaoTI;
+		this.cloudComputing = cloudComputing;
+		this.devOps = devOps;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public void setProgramacao(int programacao) {
+		this.programacao = programacao;
+	}
+
+	public void setRedes(int redes) {
+		this.redes = redes;
+	}
+
+	public void setCiberseguranca(int ciberseguranca) {
+		this.ciberseguranca = ciberseguranca;
+	}
+
+	public void setBancoDados(int bancoDados) {
+		this.bancoDados = bancoDados;
+	}
+
+	public void setBusinessIntelligence(int businessIntelligence) {
+		this.businessIntelligence = businessIntelligence;
+	}
+
+	public void setGestaoTI(int gestaoTI) {
+		this.gestaoTI = gestaoTI;
+	}
+
+	public void setCloudComputing(int cloudComputing) {
+		this.cloudComputing = cloudComputing;
+	}
+
+	public void setDevOps(int devOps) {
+		this.devOps = devOps;
+	}
+
+	@Override
+    public String toString() {
+        return "Usuario [id=" + id + ", nome=" + nome + ", email=" + email + ",senha=" + senha + "]";
+    }
+
+	public String getEmail() {
+		
+		return email;
+	}
+
+	public String getSenha() {
+		
+		return senha;
+	}
+
+	public String getTelefone() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public int getProgramacao() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int getRedes() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int getCiberseguranca() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
+
+	
+	public int getGestao_TI() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	public int getDevOps() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int getBanco_Dados() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int getBusiness_Intelligence() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int getCloud_Computing() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}

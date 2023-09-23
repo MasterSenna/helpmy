@@ -1,0 +1,52 @@
+package br.connectementor.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class InserirUsuarioNoBanco {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/dbmentor";
+        String user = "root";
+        String password = "TecInfo";
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection(url, user, password);
+
+            // Consulta SQL de inserção para a tabela Usuario
+            String sql = "INSERT INTO Usuario (Nome, Email, Senha, Telefone, Programacao, Redes, Ciberseguranca, Business_Intelligence, Gestao_TI, Cloud_Computing, DevOps) " +
+                         "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            
+            // Criar uma instrução preparada
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            // Definir os valores dos parâmetros da consulta
+            preparedStatement.setString(1, "NomeDoUsuario");
+            preparedStatement.setString(2, "email@exemplo.com");
+            preparedStatement.setString(3, "senha123");
+            preparedStatement.setString(4, "1234567890");
+            preparedStatement.setInt(5, 1); // Exemplo de valor para Programacao
+            preparedStatement.setInt(6, 0); // Exemplo de valor para Redes
+            preparedStatement.setInt(7, 1); // Exemplo de valor para Ciberseguranca
+            preparedStatement.setInt(8, 1); // Exemplo de valor para Business_Intelligence
+            preparedStatement.setInt(9, 0); // Exemplo de valor para Gestao_TI
+            preparedStatement.setInt(10, 1); // Exemplo de valor para Cloud_Computing
+            preparedStatement.setInt(11, 0); // Exemplo de valor para DevOps
+
+            // Executar a consulta de inserção
+            preparedStatement.executeUpdate();
+            
+            // Fechar a conexão
+            preparedStatement.close();
+            connection.close();
+
+            System.out.println("Usuário inserido com sucesso.");
+        } catch (ClassNotFoundException e) {
+            System.err.println("Driver JDBC não encontrado: " + e.getMessage());
+        } catch (SQLException e) {
+            System.err.println("Erro ao conectar ou inserir usuário no banco de dados: " + e.getMessage());
+        }
+    }
+}

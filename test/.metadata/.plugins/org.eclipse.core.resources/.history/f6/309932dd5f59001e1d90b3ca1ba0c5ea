@@ -1,0 +1,65 @@
+package br.connectementor.servlets;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import br.connectementor.dao.ConnectionFactory;
+import br.connectementor.dao.UsuarioDAO;
+import br.connectementor.entidades.Usuario;
+
+@WebServlet("/inserirUsuario")
+public class InserirUsuarioServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String nome = request.getParameter("nome");
+        String email = request.getParameter("email");
+        String senha = request.getParameter("senha");
+        String telefone = request.getParameter("telefone");
+
+        // Certifique-se de tratar a conversão de string em inteiros
+        int programacao = 0;
+        int redes = 0;
+        int ciberseguranca = 0;
+        int banco_Dados = 0;
+        int business_Intelligence = 0;
+        int gestao_TI = 0;
+        int cloud_Computing = 0;
+        int devOps = 0;
+
+        try {
+            programacao = Integer.parseInt(request.getParameter("programacao"));
+            redes = Integer.parseInt(request.getParameter("redes"));
+            ciberseguranca = Integer.parseInt(request.getParameter("ciberseguranca"));
+            banco_Dados = Integer.parseInt(request.getParameter("bancoDados"));
+            business_Intelligence = Integer.parseInt(request.getParameter("businessIntelligence"));
+            gestao_TI = Integer.parseInt(request.getParameter("gestaoTI"));
+            cloud_Computing = Integer.parseInt(request.getParameter("cloudComputing"));
+            devOps = Integer.parseInt(request.getParameter("devOps"));
+        } catch (NumberFormatException e) {
+            // Trate a conversão mal-sucedida aqui, se necessário.
+            // Pode redirecionar o usuário para uma página de erro, por exemplo.
+            throw new ServletException("Erro ao converter valores numéricos: " + e.getMessage());
+        }
+
+        Usuario usuario = new Usuario(nome, email, senha, telefone, programacao, redes, ciberseguranca, bancoDados,
+                businessIntelligence, gestaoTI, cloudComputing, devOps);
+
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
+            usuarioDAO.inserirUsuario(usuario);
+            response.sendRedirect("sucesso.jsp");
+        } catch (SQLException e) {
+            throw new ServletException("Erro ao inserir usuário: " + e.getMessage());
+        }
+
+    }
+}

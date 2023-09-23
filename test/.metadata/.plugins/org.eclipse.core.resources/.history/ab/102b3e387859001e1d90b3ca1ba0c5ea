@@ -1,0 +1,28 @@
+package br.mercado.servlets;
+
+import br.mercado.dao.ProdutoDAO;
+import br.mercado.models.Produto;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+
+public class ListaProdutosServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        Connection conexao = (Connection) request.getAttribute("conexao");
+        ProdutoDAO produtoDAO = new ProdutoDAO(conexao);
+
+        try {
+            List<Produto> produtos = produtoDAO.listarProdutos();
+            request.setAttribute("produtos", produtos);
+            request.getRequestDispatcher("listaProdutos.jsp").forward(request, response);
+        } catch (SQLException e) {
+            throw new ServletException("Erro ao listar produtos: " + e.getMessage());
+        }
+    }
+}

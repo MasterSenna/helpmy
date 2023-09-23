@@ -1,0 +1,11 @@
+package br.mercado.models;
+
+public class Produto {
+    private int id;
+    private String nome;
+    private String descricao;
+    private double preco;
+    private int quantidade;
+
+    // Getters e setters
+}

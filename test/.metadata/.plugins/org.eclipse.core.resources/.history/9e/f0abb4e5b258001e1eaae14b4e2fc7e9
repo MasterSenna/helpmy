@@ -1,0 +1,26 @@
+package br.connectementor.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class TestDatabaseConnection {
+    public static void main(String[] args) {
+        // Informações de conexão com o banco de dados
+    	String jdbcUrl  = "jdbc:sqlserver://DESKTOP-IIOKE60:1433;databaseName=ConnectMentorWeb";
+        String user = "sa";
+        String password = "TecInfo";
+
+        try {
+            // Tentar estabelecer a conexão
+            Connection connection = DriverManager.getConnection(jdbcUrl, user, password);
+
+            // Se chegou até aqui, a conexão foi bem-sucedida
+            System.out.println("Conexão com o banco de dados estabelecida com sucesso.");
+            connection.close();
+        } catch (SQLException e) {
+            // Tratar qualquer erro de conexão
+            System.err.println("Erro ao conectar ao banco de dados: " + e.getMessage());
+        }
+    }
+}

@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\Lenovo\Documents\test\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+746322989.index
+18355609.index
+1541822611.index
+4021497062.index
+3454947828.index
+3942322707.index
+410919113.index
