@@ -24,6 +24,7 @@ public class InserirUsuarioServlet extends HttpServlet {
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");
         String telefone = request.getParameter("telefone");
+        
 
         int Programacao = 0;
         int Redes = 0;

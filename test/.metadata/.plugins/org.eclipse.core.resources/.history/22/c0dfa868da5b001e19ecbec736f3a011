@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sucesso</title>
+</head>
+<body>
+    <h1>Sucesso!</h1>
+    <p>Seu registro foi inserido com sucesso no banco de dados.</p>
+    
+    <!-- Adicione aqui qualquer conteúdo adicional que você deseja mostrar na página de sucesso. -->
+    
+    <p><a href="index.jsp">Voltar à página inicial</a></p>
+</body>
+</html>
+    
