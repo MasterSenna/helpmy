@@ -1,0 +1,156 @@
+package br.connectementor.entidades;
+
+public class Usuario {
+    private int Id;
+    private String nome;
+    private String email;
+    private String senha;
+    private String telefone;
+    private int programacao;
+    private int redes;
+    private int ciberseguranca;
+    
+    private int businessIntelligence;
+    private int gestaoTI;
+    private int cloudComputing;
+    private int devops;
+
+    public Usuario(int devOps2, String nome2, String email2, String senha2, String telefone2, int programacao2, int redes, int ciberseguranca2, int banco_Dados2, int business_Intelligence, int gestao_TI, int cloud_Computing2, int devOps3) {
+        // Construtor vazio
+    }
+
+	public Usuario(int id, String nome, String email, String senha, String telefone, int programacao, int redes,
+			int ciberseguranca, int businessIntelligence, int gestaoTI, int cloudComputing) {
+		super();
+		Id = Id;
+		nome = nome;
+		email = email;
+		senha = senha;
+		telefone = telefone;
+		programacao = programacao;
+		redes = reedes;
+		ciberseguranca = ciberseguranca;
+		
+		this.businessIntelligence = businessIntelligence;
+		gestaoTI = gestaoTI;
+		cloudComputing = cloudComputing;
+		devops = devops;
+	}
+
+	public int getId() {
+		return Id;
+	}
+
+	public void setId(int id) {
+		Id = Id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		nome = nome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		email = email;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		senha = senha;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		telefone = telefone;
+	}
+
+	public int getProgramacao() {
+		return programacao;
+	}
+
+	public void setProgramacao(int programacao) {
+		programacao = programacao;
+	}
+
+	public int getredes() {
+		return redes;
+	}
+
+	public void setReedes(int reedes) {
+		redes = redes;
+	}
+
+	public int getCiberseguranca() {
+		return ciberseguranca;
+	}
+
+	public void setCiberseguranca(int ciberseguranca) {
+		ciberseguranca = ciberseguranca;
+	}
+
+	
+
+	
+
+	public int getBusinessIntelligence() {
+		return businessIntelligence;
+	}
+
+	public void setBusinessIntelligence(int businessIntelligence) {
+		this.businessIntelligence = businessIntelligence;
+	}
+
+	public int getGestaoTI() {
+		return gestaoTI;
+	}
+
+	public void setGestaoTI(int gestaoTI) {
+		gestaoTI = gestaoTI;
+	}
+
+	public int getCloud_Computing() {
+		return cloudComputing;
+	}
+
+	public void setCloud_Computing(int cloud_Computing) {
+		cloudComputing = cloud_Computing;
+	}
+
+	public int getDevOps() {
+		return devops;
+	}
+
+	public void setDevOps(int devOps) {
+		devops = devOps;
+	}
+
+	public int getGestao_TI() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int getRedes() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int getBusiness_Intelligence() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}
+
+   

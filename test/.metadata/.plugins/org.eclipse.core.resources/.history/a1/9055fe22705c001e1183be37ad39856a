@@ -1,0 +1,134 @@
+package br.connectementor.entidades;
+
+public class Usuario {
+    private int Id;
+    private String nome;
+    private String email;
+    private String senha;
+    private String telefone;
+    private int programacao;
+    private int redes;
+    private int ciberseguranca;
+    private int businessIntelligence;
+    private int gestaoTI;
+    private int cloudComputing;
+    private int devops;
+
+    // Construtor vazio
+    public Usuario() {
+    }
+
+    // Construtor com parâmetros
+    public Usuario(int Id, String nome, String email, String senha, String telefone, int programacao, int redes,
+            int ciberseguranca, int businessIntelligence, int gestaoTI, int cloudComputing, int devops) {
+        this.Id = Id;
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.telefone = telefone;
+        this.programacao = programacao;
+        this.redes = redes;
+        this.ciberseguranca = ciberseguranca;
+        this.businessIntelligence = businessIntelligence;
+        this.gestaoTI = gestaoTI;
+        this.cloudComputing = cloudComputing;
+        this.devops = devops;
+    }
+
+    // Getters e setters
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int Id) {
+        this.Id = Id;
+    }
+
+    public String getnome() {
+        return nome;
+    }
+
+    public void setnome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getemail() {
+        return email;
+    }
+
+    public void setemail(String email) {
+        this.email = email;
+    }
+
+    public String getsenha() {
+        return senha;
+    }
+
+    public void setsenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String gettelefone() {
+        return telefone;
+    }
+
+    public void settelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public int getprogramacao() {
+        return programacao;
+    }
+
+    public void setprogramacao(int programacao) {
+        this.programacao = programacao;
+    }
+
+    public int getredes() {
+        return redes;
+    }
+
+    public void setRedes(int redes) {
+        this.redes = redes;
+    }
+
+    public int getCiberseguranca() {
+        return ciberseguranca;
+    }
+
+    public void setCiberseguranca(int ciberseguranca) {
+        this.ciberseguranca = ciberseguranca;
+    }
+
+    public int getbusinessIntelligence() {
+        return businessIntelligence;
+    }
+
+    public void setbusinessIntelligence(int businessIntelligence) {
+        this.businessIntelligence = businessIntelligence;
+    }
+
+    public int getgestaoTI() {
+        return gestaoTI;
+    }
+
+    public void setgestaoTI(int gestaoTI) {
+        this.gestaoTI = gestaoTI;
+    }
+
+    public int getcloudComputing() {
+        return cloudComputing;
+    }
+
+    public void setcloudComputing(int cloudComputing) {
+        this.cloudComputing = cloudComputing;
+    }
+
+    public int getdevops() {
+        return devops;
+    }
+
+    public void setdevops(int devops) {
+        this.devops = devops;
+    }
+}

@@ -1,0 +1,89 @@
+package br.connectementor.entidades;
+
+public class Usuario {
+    private int Id;
+    private String nome;
+    private String email;
+    private String senha;
+    private String telefone;
+    private int programacao;
+    private int redes;
+    private int ciberseguranca;
+    
+    private int businessIntelligence;
+    private int gestaoTI;
+    private int cloudComputing;
+    private int devops;
+
+    public Usuario(int devOps2, String nome2, String email2, String senha2, String telefone2, int programacao2, int redes, int ciberseguranca2, int banco_Dados2, int business_Intelligence, int gestao_TI, int cloud_Computing2, int devOps3) {
+        // Construtor vazio
+    }
+
+	public Usuario(int id, String nome, String email, String senha, String telefone, int programacao, int redes,
+			int ciberseguranca, int businessIntelligence, int gestaoTI, int cloudComputing) {
+		super();
+		Id = Id;
+		nome = nome;
+		email = email;
+		senha = senha;
+		telefone = telefone;
+		programacao = programacao;
+		redes = redes;
+		ciberseguranca = ciberseguranca;
+		
+		this.businessIntelligence = businessIntelligence;
+		gestaoTI = gestaoTI;
+		cloudComputing = cloudComputing;
+		devops = devops;
+	}
+	public void setId(int id) {
+	    this.Id = id;
+	}
+
+	public void setNome(String nome) {
+	    this.nome = nome;
+	}
+
+	public void setEmail(String email) {
+	    this.email = email;
+	}
+
+	public void setSenha(String senha) {
+	    this.senha = senha;
+	}
+
+	public void setTelefone(String telefone) {
+	    this.telefone = telefone;
+	}
+
+	public void setProgramacao(int programacao) {
+	    this.programacao = programacao;
+	}
+
+	public void setRedes(int redes) {
+	    this.redes = redes;
+	}
+
+	public void setCiberseguranca(int ciberseguranca) {
+	    this.ciberseguranca = ciberseguranca;
+	}
+
+	public void setBusinessIntelligence(int businessIntelligence) {
+	    this.businessIntelligence = businessIntelligence;
+	}
+
+	public void setGestaoTI(int gestaoTI) {
+	    this.gestaoTI = gestaoTI;
+	}
+
+	public void setCloudComputing(int cloudComputing) {
+	    this.cloudComputing = cloudComputing;
+	}
+
+	public void setDevops(int devops) {
+	    this.devops = devops;
+	}
+
+}
+
+   

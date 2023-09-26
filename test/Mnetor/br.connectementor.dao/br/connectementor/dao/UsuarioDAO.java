@@ -14,7 +14,7 @@ public class UsuarioDAO {
     }
 
     public void inserirUsuario(Usuario usuario) throws SQLException {
-        String sql = "INSERT INTO Usuario (nome, email, senha, telefone, programacao, redes, ciberseguranca, businessIntelligence, gestaoTI, cloudComputing, devOps) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Usuario (nome, email, senha, telefone, programacao, redes, ciberseguranca, businessIntelligence, gestaoTI, cloudComputing, devops) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement ps = conexao.prepareStatement(sql)) {
             ps.setString(1, usuario.getNome());
             ps.setString(2, usuario.getEmail());
@@ -23,10 +23,10 @@ public class UsuarioDAO {
             ps.setInt(5, usuario.getProgramacao());
             ps.setInt(6, usuario.getRedes());
             ps.setInt(7, usuario.getCiberseguranca());
-            ps.setInt(8, usuario.getBusiness_Intelligence());
-            ps.setInt(9, usuario.getGestao_TI());
-            ps.setInt(10, usuario.getCloud_Computing());
-            ps.setInt(11, usuario.getDevOps());
+            ps.setInt(8, usuario.getBusinessIntelligence());
+            ps.setInt(9, usuario.getGestaoTI());
+            ps.setInt(10, usuario.getCloudComputing());
+            ps.setInt(11, usuario.getDevops());
 
             ps.executeUpdate();
         }

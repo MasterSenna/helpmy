@@ -1,0 +1,73 @@
+package br.connectementor.servlets;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import br.connectementor.dao.ConnectionFactory;
+import br.connectementor.dao.UsuarioDAO;
+import br.connectementor.entidades.Usuario;
+
+@WebServlet("/inserirUsuario")
+public class InserirUsuarioServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String nome = request.getParameter("nome");
+        String email = request.getParameter("email");
+        String senha = request.getParameter("senha");
+        String telefone = request.getParameter("telefone");
+        
+
+        int programacao = 0;
+        int redes = 0;
+        int ciberseguranca = 0;
+                              // Correção aqui
+        int businessIntelligence = 0;
+        int gestaoTI = 0;
+        int cloudComputing = 0;
+        int devops = 0;
+
+        if (request.getParameter("programacao") != null && !request.getParameter("programacao").isEmpty()) {
+            programacao = Integer.parseInt(request.getParameter("programacao"));
+        }
+        if (request.getParameter("redes") != null && !request.getParameter("redes").isEmpty()) {
+            redes = Integer.parseInt(request.getParameter("redes"));
+        }
+        if (request.getParameter("ciberseguranca") != null && !request.getParameter("ciberseguranca").isEmpty()) {
+            ciberseguranca = Integer.parseInt(request.getParameter("ciberseguranca"));
+        }
+        
+        
+        if (request.getParameter("businessIntelligence") != null && !request.getParameter("businessIntelligence").isEmpty()) {
+            businessIntelligence = Integer.parseInt(request.getParameter("businessIntelligence"));
+        }
+        if (request.getParameter("gestaoTI") != null && !request.getParameter("gestaoTI").isEmpty()) {
+            gestaoTI = Integer.parseInt(request.getParameter("gestaoTI"));
+        }
+        if (request.getParameter("cloudComputing") != null && !request.getParameter("cloudcComputing").isEmpty()) {
+            cloudComputing = Integer.parseInt(request.getParameter("cloudComputing"));
+        }
+        if (request.getParameter("devops") != null && !request.getParameter("devops").isEmpty()) {
+            devops = Integer.parseInt(request.getParameter("devps"));
+        }
+
+        Usuario usuario = new Usuario( devops, nome, email, senha, telefone, programacao, redes, ciberseguranca,
+        		businessIntelligence, gestaoTI, cloudComputing, devops, devops);
+
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
+            usuarioDAO.inserirUsuario(usuario);
+            response.sendRedirect("sucesso.jsp");
+        } catch (SQLException e) {
+            throw new ServletException("Erro ao inserir usuário: " + e.getMessage());
+        }
+    }
+}
